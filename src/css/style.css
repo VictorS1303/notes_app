@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Lato: 100, 200, 300, 400, 500, 600, 700, 800, 900');
+
+:root
+{
+    --body-background-color: #4cb2d4;
+}
+
+body
+{
+    font-family: 'Lato', sans-serif;
+    background-color: var(--body-background-color);
+}
+
+button
+{
+    background-color: transparent;
+}
