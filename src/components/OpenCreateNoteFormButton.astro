@@ -5,3 +5,38 @@
 <button class="open-create-new-note-form-button" id="open_create_new_note_form_button">
     <i class="fas fa-plus"></i>
 </button>
+
+<style>
+    button
+    {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        font-size: 25px;
+        height: 50px;
+        width: 50px;
+        border-radius: calc(var(--base-border-radius) * 10);
+        color: #fff;
+        background-color: #191970;
+    }
+</style>
+
+<script>
+    const openCreateNewFormButton = document.getElementById('open_create_new_note_form_button')
+
+    // EVENT LISTENERS //
+    openCreateNewFormButton.addEventListener('mouseenter', generateRandomBackgroundColor)
+    openCreateNewFormButton.addEventListener('click', openNewNoteForm)
+
+    // FUNCTIONS //
+    function generateRandomBackgroundColor()
+    {
+        openCreateNewFormButton.style.backgroundColor = `#${Math.floor(Math.random()* 0xffffff).toString(16)}`
+        openCreateNewFormButton.style.transitionDuration = '.15s'
+    }
+    // Open New Note Form //
+    function openNewNoteForm()
+    {
+        
+    }
+</script>
