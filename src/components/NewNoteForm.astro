@@ -1,3 +1,7 @@
+---
+import SubmitButton from '../components/SubmitButton.astro';
+---
+
 <form action="/" method="POST "class="new-note-form" id="new_note_form">
     <div class="container form-container">
         <i class="fas fa-times close-new-note-form-button" id="close_new_note_form_button"></i>
@@ -10,7 +14,7 @@
             <textarea name="note-text" id="note_text" placeholder="Note text"></textarea>
         </div>
     </div>
-    <button type="submit" class="submit-btn" id="submit_btn">Submit</button>
+     <SubmitButton/>
 </form>
 
 <style>
@@ -84,33 +88,17 @@
         padding-top: 10px;
     }
 
-    form button
-    {
-        font-family: inherit;
-        display: block;
-        background-color: midnightblue;
-        padding: 10px;
-        color: var(--primary-text-color);
-        border-radius: calc(var(--base-border-radius) / 2);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: var(--box-shadow);
-        margin-top: 20px;
-    }
-
-    form button:active
-    {
-        transform: scale(.98);
-        box-shadow: none;
-    }
+    
 </style>
 
 <script>
     const form = document.getElementById('new_note_form')
+    const submitButton = document.querySelector('#submit_btn')
     const closeNewNoteFormButton = document.getElementById('close_new_note_form_button')
 
     // EVENT LISTENERS //
     closeNewNoteFormButton.addEventListener('click', closeNewNoteForm)
+    submitButton.addEventListener('click', submitForm)
 
     // FUNCTIONS //
 
@@ -118,5 +106,16 @@
     function closeNewNoteForm()
     {
         form.classList.remove('active')
+    }
+
+    // Submit Form
+    function submitForm(e)
+    {
+        // Remember to remove this when implementing form submission
+        e.preventDefault()
+        
+        // Submit stuff goes in here, too
+        
+        closeNewNoteForm()
     }
 </script>
