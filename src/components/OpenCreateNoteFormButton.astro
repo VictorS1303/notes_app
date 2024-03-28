@@ -1,4 +1,5 @@
 ---
+import NewNoteForm from "./NewNoteForm.astro"
 ---
 
 
@@ -23,6 +24,7 @@
 
 <script>
     const openCreateNewFormButton = document.getElementById('open_create_new_note_form_button')
+    const newNoteForm = document.getElementById('new_note_form')
 
     // EVENT LISTENERS //
     openCreateNewFormButton.addEventListener('mouseenter', generateRandomBackgroundColor)
@@ -37,6 +39,6 @@
     // Open New Note Form //
     function openNewNoteForm()
     {
-        
+        newNoteForm.classList.add('active')
     }
 </script>

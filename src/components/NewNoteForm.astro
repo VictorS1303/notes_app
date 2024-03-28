@@ -1,0 +1,122 @@
+<form action="/" method="POST "class="new-note-form" id="new_note_form">
+    <div class="container form-container">
+        <i class="fas fa-times close-new-note-form-button" id="close_new_note_form_button"></i>
+        <div class="title-input-container">
+            <label for="note_title">Note Title:</label>
+            <input type="text" name="note-title" class="note-title" id="note_title" placeholder="Title">
+        </div>
+        <div>
+            <label for="note_text">Note Text</label>
+            <textarea name="note-text" id="note_text" placeholder="Note text"></textarea>
+        </div>
+    </div>
+    <button type="submit" class="submit-btn" id="submit_btn">Submit</button>
+</form>
+
+<style>
+    form
+    {
+        display: grid;
+        place-content: center;
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(145, 173, 226);
+        min-height: 400px;
+        width: 350px;
+        border-radius: var(--base-border-radius);
+        box-shadow: var(--box-shadow);
+        transition: top .4s ease-in;
+    }
+
+    form .close-new-note-form-button
+    {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+        color: var(--primary-text-color);
+        cursor: pointer;
+    }
+
+    form.active
+    {
+        top: 50%;
+        transition: top .4s ease-in;
+    }
+
+    form .container.form-container
+    {
+        width: 100%;
+    }
+
+    form .title-input-container
+    {
+        margin-bottom: 20px;
+    }
+
+    form div label
+    {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form div input,
+    form div textarea
+    {
+        font-family: inherit;
+        background-color: transparent;
+        border: 2px solid #fff;
+        width: 275px;
+        border-radius: calc(var(--base-border-radius) / 2);
+        text-indent: 10px;
+    }
+
+    form div input
+    {
+       height: 35px;
+    }
+
+    form div textarea
+    {
+        height: 150px;
+        padding-top: 10px;
+    }
+
+    form button
+    {
+        font-family: inherit;
+        display: block;
+        background-color: midnightblue;
+        padding: 10px;
+        color: #fff;
+        border-radius: calc(var(--base-border-radius) / 2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: var(--box-shadow);
+        margin-top: 20px;
+    }
+
+    form button:active
+    {
+        transform: scale(.98);
+        box-shadow: none;
+    }
+</style>
+
+<script>
+    const form = document.getElementById('new_note_form')
+    const closeNewNoteFormButton = document.getElementById('close_new_note_form_button')
+
+    // EVENT LISTENERS //
+    closeNewNoteFormButton.addEventListener('click', closeNewNoteForm)
+
+    // FUNCTIONS //
+
+    // Close New Note Form on Button Click
+    function closeNewNoteForm()
+    {
+        form.classList.remove('active')
+    }
+</script>
