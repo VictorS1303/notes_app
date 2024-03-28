@@ -16,9 +16,19 @@ import NewNoteForm from "./NewNoteForm.astro"
         font-size: 25px;
         height: 50px;
         width: 50px;
+        border: none;
         border-radius: calc(var(--base-border-radius) * 10);
-        color: #fff;
+        color: var(--primary-text-color);
         background-color: #191970;
+        box-shadow: var(--box-shadow);
+        cursor: pointer;
+    }
+
+    button:active
+    {
+        transform: scale(.98);
+        box-shadow: none;
+        transition: none;
     }
 </style>
 
@@ -28,6 +38,7 @@ import NewNoteForm from "./NewNoteForm.astro"
 
     // EVENT LISTENERS //
     openCreateNewFormButton.addEventListener('mouseenter', generateRandomBackgroundColor)
+    openCreateNewFormButton.addEventListener('mouseleave', resetBackgroundColor)
     openCreateNewFormButton.addEventListener('click', openNewNoteForm)
 
     // FUNCTIONS //
@@ -36,6 +47,12 @@ import NewNoteForm from "./NewNoteForm.astro"
         openCreateNewFormButton.style.backgroundColor = `#${Math.floor(Math.random()* 0xffffff).toString(16)}`
         openCreateNewFormButton.style.transitionDuration = '.15s'
     }
+
+    function resetBackgroundColor()
+    {
+        openCreateNewFormButton.style.backgroundColor = '#191972'
+    }
+
     // Open New Note Form //
     function openNewNoteForm()
     {
