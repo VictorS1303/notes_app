@@ -1,0 +1,126 @@
+<div class="note four" id="note">
+    <div>
+        <input type="text" class="note-title-input" id="note_title_input" placeholder="Title">
+    </div>
+    <div>
+        <textarea class="note-text-input" id="note_text_input" placeholder="Text"></textarea>
+    </div>
+</div>
+
+<style>
+    .note
+    {
+        font-family: 'Lato', sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        width: 200px;
+        border-radius: calc(var(--base-border-radius) / 2);
+        box-shadow: var(--box-shadow);
+    }
+
+    .note > div > *
+    {
+        width: 98%;
+        /* margin-left: -2px; */
+    }
+
+  
+
+    .note div input,
+    .note div textarea
+    {
+        font-family: inherit;
+        background-color: transparent;
+        border: none;
+    }
+
+    .note div input
+    {
+        height: 25px;
+        text-indent: 5px;
+    }
+
+    .note div textarea
+    {
+        margin-top: 0;
+        height: 160px;
+        text-indent: 5px;
+        padding-top: 10px;
+    }
+
+    /* Different Note Styles */
+
+    /* Note One */
+    .note.one
+    {
+        background-color: #fff;
+    }
+
+    .note.one div input,
+    .note.one div textarea
+    {
+        color: #000;
+    }
+
+    .note.one div textarea
+    {
+        border-top: 2px solid #000;
+    }
+    
+    /* Note Two */
+    .note.two
+    {
+        background-color: #191970;
+    }
+
+    .note.two div input,
+    .note.two div textarea
+    {
+        color: #fff;
+    }
+
+    .note.two div textarea
+    {
+        border-top: 2px solid #fff;
+    }
+
+    /* Note Three */
+    .note.three
+    {
+        background-color: #000;
+    }
+
+    .note.three div input,
+    .note.three div textarea
+    {
+        color: #fff;
+    }
+
+    .note.three div textarea
+    {
+        border-top: 2px solid #fff;
+    }
+
+    /* Note Four */
+    .note.four
+    {
+        background-color: #fff;
+    }
+
+    .note.four div input,
+    .note.four div textarea
+    {
+        color: #191970;
+    }
+
+    .note.four div textarea
+    {
+        border-top: 2px solid #191970;
+    }
+</style>
+
+
+<script>
+    const note = document.querySelector('.note')
+</script>

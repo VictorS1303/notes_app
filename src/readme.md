@@ -1,9 +1,10 @@
 ### UNFINISHED COMPONENTS ###
- --> # Note
  --> # Header
  --> # DeleteSingleNoteButton
  --> # NoteCounter
 
+### IN PROGRESS ###
+ --> # Note
 
 ### FINISHED COMPONENTS ###
  --> # OpenCreateNoteFormButton
