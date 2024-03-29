@@ -3,7 +3,7 @@ import Note from '../components/Note.astro'
 ---
 
 <section class="container notes-container">
-    
+    <Note class="{randomStyle}"/>
 </section>
 
 
@@ -11,6 +11,7 @@ import Note from '../components/Note.astro'
     .container.notes-container
     {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-content: center;
         gap: 60px;
