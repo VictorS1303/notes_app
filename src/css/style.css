@@ -27,8 +27,13 @@ button
     cursor: pointer;
 }
 
-input,
-textarea
+input:focus,
+textarea:focus
 {
     outline: none;
+}
+
+textarea
+{
+    resize: none;
 }
