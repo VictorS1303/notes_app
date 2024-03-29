@@ -1,0 +1,27 @@
+---
+const {submitButtonText} = Astro.props
+---
+
+<button type="submit" class="submit-btn" id="submit_btn">{submitButtonText}</button>
+
+<style>
+    .submit-btn
+    {
+        font-family: inherit;
+        display: block;
+        background-color: midnightblue;
+        padding: 10px;
+        color: var(--primary-text-color);
+        border-radius: calc(var(--base-border-radius) / 2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: var(--box-shadow);
+        margin-top: 20px;
+    }
+
+    .submit-btn:active
+    {
+        transform: scale(.98);
+        box-shadow: none;
+    }
+</style>
