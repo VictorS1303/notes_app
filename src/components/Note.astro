@@ -30,7 +30,6 @@ const id = Astro.props
     .note > div > *
     {
         width: 98%;
-        /* margin-left: -2px; */
     }
 
   
@@ -127,14 +126,12 @@ const id = Astro.props
     {
         border-top: 2px solid #191970;
     }
-
-    /* Delete Single Note Button */
     
 </style>
 
 
 <script>
-    const notes = document.querySelectorAll('.note')
+    const notes = document.querySelectorAll('.note') as NodeList
     const styleClasses = ['one', 'two', 'three', 'four']
     const openCreateNewNoteFormButton = document.querySelector('#open_create_new_note_form_button')
 
@@ -143,7 +140,7 @@ const id = Astro.props
     // Ultimately to be called upon successful form submission
     function generateRandomNoteStyle()
     {
-        notes.forEach((note) => {
+        notes.forEach((note: HTMLElement) => {
             const randomStyle = styleClasses[Math.floor(Math.random() * styleClasses.length)]
             note.classList.add(randomStyle)
         })
