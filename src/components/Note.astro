@@ -1,8 +1,9 @@
 ---
-const {randomStyle} = Astro.props
+import OpenCreateNoteFormButton from "./OpenCreateNoteFormButton.astro"
+const {randomStyle, id} = Astro.props
 ---
 
-<div class="note" id="note">
+<div class:list={['note', '{randomStyle}']} id={id}>
     <div>
         <input type="text" class="note-title-input" id="note_title_input" placeholder="Title">
     </div>
@@ -17,8 +18,8 @@ const {randomStyle} = Astro.props
         font-family: 'Lato', sans-serif;
         display: flex;
         flex-direction: column;
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         border-radius: calc(var(--base-border-radius) / 2);
         box-shadow: var(--box-shadow);
     }
@@ -41,7 +42,8 @@ const {randomStyle} = Astro.props
 
     .note div input
     {
-        height: 25px;
+        font-size: 20px;
+        height: 40px;
         text-indent: 5px;
     }
 
@@ -128,8 +130,8 @@ const {randomStyle} = Astro.props
 <script>
     const notes = document.querySelectorAll('.note')
     const styleClasses = ['one', 'two', 'three', 'four']
+    const openCreateNewNoteFormButton = document.querySelector('#open_create_new_note_form_button')
 
-    window.addEventListener('load', generateRandomNoteStyle)
 
     // Ultimately to be called upon successful form submission
     function generateRandomNoteStyle()

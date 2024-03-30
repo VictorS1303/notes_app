@@ -33,24 +33,24 @@ import NewNoteForm from "./NewNoteForm.astro"
 </style>
 
 <script>
-    const openCreateNewFormButton = document.getElementById('open_create_new_note_form_button')
+    const openCreateNewNoteFormButton = document.getElementById('open_create_new_note_form_button')
     const newNoteForm = document.getElementById('new_note_form')
 
     // EVENT LISTENERS //
-    openCreateNewFormButton.addEventListener('mouseenter', generateRandomBackgroundColor)
-    openCreateNewFormButton.addEventListener('mouseleave', resetBackgroundColor)
-    openCreateNewFormButton.addEventListener('click', openNewNoteForm)
+    openCreateNewNoteFormButton.addEventListener('mouseenter', generateRandomBackgroundColor)
+    openCreateNewNoteFormButton.addEventListener('mouseleave', resetBackgroundColor)
+    openCreateNewNoteFormButton.addEventListener('click', openNewNoteForm)
 
     // FUNCTIONS //
     function generateRandomBackgroundColor()
     {
-        openCreateNewFormButton.style.backgroundColor = `#${Math.floor(Math.random()* 0xffffff).toString(16)}`
-        openCreateNewFormButton.style.transitionDuration = '.15s'
+        openCreateNewNoteFormButton.style.backgroundColor = `#${Math.floor(Math.random()* 0xffffff).toString(16)}`
+        openCreateNewNoteFormButton.style.transitionDuration = '.15s'
     }
 
     function resetBackgroundColor()
     {
-        openCreateNewFormButton.style.backgroundColor = '#191972'
+        openCreateNewNoteFormButton.style.backgroundColor = '#191972'
     }
 
     // Open New Note Form //
