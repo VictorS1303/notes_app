@@ -1,3 +1,11 @@
 {
-    "liveServer.settings.CustomBrowser": "firefox"
+    "liveServer.settings.CustomBrowser": "firefox",
+    "editor.multiCursorPaste": "spread",
+    "editor.cursorBlinking": "expand",
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+    "editor.language.brackets": [],
+    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "astro.format.placeOpenBraceOnNewLineForControlBlocks": true,
+    "astro.format.placeOpenBraceOnNewLineForFunctions": true,
 }

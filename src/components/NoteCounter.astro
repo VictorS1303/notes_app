@@ -1,18 +1,17 @@
 ---
-import NotesContainer from "./NotesContainer.astro"
+import NotesContainer from "./NotesContainer.astro";
 ---
 
 <h2>
-    Notes: <span class="note-counter" id="note_counter">0</span>
+  Notes: <span class="note-counter" id="note_counter">0</span>
 </h2>
 
-
 <script>
-const notesContainer = document.querySelector('.notes-container');
-const noteCounter = document.querySelector('#note_counter');
-let noteCount = notesContainer.children.length;
+  function countNotes() {
+    const notesContainer = document.querySelector(".notes-container");
+    const noteCounter = document.querySelector("#note_counter");
+    let noteCount = notesContainer.children.length;
 
-noteCounter.textContent = noteCount.toString();
-
-
+    noteCounter.textContent = noteCount.toString();
+  }
 </script>
