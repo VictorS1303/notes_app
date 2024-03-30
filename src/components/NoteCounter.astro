@@ -8,11 +8,10 @@ import NotesContainer from "./NotesContainer.astro"
 
 
 <script>
-const notesContainer = document.querySelector('.notes-container');
-const noteCounter = document.querySelector('#note_counter');
-let noteCount = notesContainer.children.length;
 
-noteCounter.textContent = noteCount.toString();
+    const notesContainer = document.querySelector('.notes-container');
+    const noteCounter = document.querySelector('#note_counter');
+    let noteCount = notesContainer.children.length;
 
-
+    noteCounter.textContent = noteCount.toString();
 </script>
