@@ -1,0 +1,20 @@
+---
+import NoteCounter from '../components/NoteCounter.astro'
+import DeleteAllNotesButton from '../components/DeleteAllNotesButton.astro'
+---
+
+<header class="header" id="header">
+    <NoteCounter/>
+    <DeleteAllNotesButton/>
+</header>
+
+
+<style>
+    header
+    {
+        width: 100vw;
+        height: 70px;
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+    }
+</style>
