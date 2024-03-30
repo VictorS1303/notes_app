@@ -1,7 +1,6 @@
 ---
 import OpenCreateNoteFormButton from "./OpenCreateNoteFormButton.astro"
 import NotesContainer from "./NotesContainer.astro"
-import NotesContainer from "./NotesContainer.astro"
 import DeleteSingleNoteButton from "./DeleteSingleNoteButton.astro"
 const id = Astro.props
 ---
@@ -168,24 +167,6 @@ const id = Astro.props
             }
             e.target.closest('.note').remove()
         }
-
-        decrementNoteCounter()
-    }
-
-    // Decrement Note Counter
-    function decrementNoteCounter()
-    {
-        const noteCounter = document.querySelector("#note_counter");
-        let noteCount = notesContainer.children.length;
-        noteCounter.textContent = noteCount.toString();
-        
-
-        if(noteCount <= 0)
-        {
-            deleteAllNotesButton.style.display = 'none'
-        }
-
-        noteCount--
 
         decrementNoteCounter()
     }
