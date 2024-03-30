@@ -1,5 +1,6 @@
 ---
 import OpenCreateNoteFormButton from "./OpenCreateNoteFormButton.astro"
+import DeleteSingleNoteButton from "./DeleteSingleNoteButton.astro"
 const id = Astro.props
 ---
 
@@ -10,6 +11,7 @@ const id = Astro.props
     <div>
         <textarea class="note-text-input" id="note_text_input" placeholder="Text"></textarea>
     </div>
+    <DeleteSingleNoteButton />
 </div>
 
 <style>
