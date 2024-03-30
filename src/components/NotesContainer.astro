@@ -3,13 +3,8 @@ import Note from '../components/Note.astro'
 ---
 
 <section class="container notes-container">
-    <Note id="note"/>
-    <Note id="note"/>
-    <Note id="note"/>
-    <Note id="note"/>
-    <Note id="note"/>
-    <Note id="note"/>
-    <Note id="note"/>
+    <!-- What the component should looke like when appended to the container -->
+    <!-- <Note id="note"/> -->
 </section>
 
 
@@ -32,3 +27,13 @@ import Note from '../components/Note.astro'
         background-color: #191912;
     }
 </style>
+
+<script>
+    window.addEventListener('load', appendNoteComponent)
+
+    function appendNoteComponent()
+    {
+        // Append Note component to section.container.notes-container here
+
+    }
+</script>
