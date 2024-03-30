@@ -38,13 +38,12 @@ import NoteCounter from './NoteCounter.astro'
             {
                 while (notesContainer.firstChild)
                 {
-                    notesContainer.removeChild(notesContainer.firstChild);
-                    
+                    notesContainer.removeChild(notesContainer.firstChild)   
                 }
-                const noteCounter = document.querySelector('#note_counter');
-                let noteCount = notesContainer.children.length;
 
-                noteCounter.textContent = noteCount.toString();
+                const noteCounter = document.querySelector('#note_counter')
+                let noteCount = notesContainer.children.length
+                noteCounter.textContent = noteCount.toString()
             }
         }
     }
