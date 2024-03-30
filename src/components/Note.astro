@@ -6,10 +6,10 @@ const id = Astro.props
 
 <div class="note" id="{id}">
     <div>
-        <input type="text" class="note-title-input" id="note_title_input" placeholder="Title">
+        <input type="text" class="note-title-input" id="note_title_input" placeholder="Title" disabled>
     </div>
     <div>
-        <textarea class="note-text-input" id="note_text_input" placeholder="Text"></textarea>
+        <textarea class="note-text-input" id="note_text_input" placeholder="Text" disabled></textarea>
     </div>
     <DeleteSingleNoteButton />
 </div>
@@ -135,7 +135,9 @@ const id = Astro.props
     const styleClasses = ['one', 'two', 'three', 'four']
     const openCreateNewNoteFormButton = document.querySelector('#open_create_new_note_form_button')
 
+    // Ultimately to be added to the submit event
     window.addEventListener('load', generateRandomNoteStyle)
+    notes.forEach((note: HTMLElement) => note.addEventListener('click', (e) => deleteSingleNote(e)))
 
     // Ultimately to be called upon successful form submission
     function generateRandomNoteStyle()
@@ -144,5 +146,20 @@ const id = Astro.props
             const randomStyle = styleClasses[Math.floor(Math.random() * styleClasses.length)]
             note.classList.add(randomStyle)
         })
+    }
+
+    // Delete Single Note
+    function deleteSingleNote(e: any)
+    {
+        if(e.target.matches('.delete-single-note-btn'))
+        {
+            const isWantingToDeleteSingleNote = confirm('Are you sure you want to delete this note? It\'ll also delete it from the database?')
+
+            if(!isWantingToDeleteSingleNote) 
+            {
+                return
+            }
+            e.target.closest('.note').remove()
+        }
     }
 </script>
