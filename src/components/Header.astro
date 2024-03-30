@@ -5,17 +5,21 @@ import DeleteAllNotesButton from '../components/DeleteAllNotesButton.astro'
 
 <header class="header" id="header">
     <NoteCounter/>
-    <DeleteAllNotesButton/>
+    <!-- <DeleteAllNotesButton/> -->
 </header>
 
 
 <style>
     header
     {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
         width: 100vw;
         height: 70px;
         background-color: #fff;
         box-shadow: var(--box-shadow);
     }
-    
+
 </style>
