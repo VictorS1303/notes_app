@@ -1,0 +1,56 @@
+---
+import NotesContainer from "./NotesContainer.astro"
+import NoteCounter from "./NoteCounter.astro"
+---
+
+<i class="fas fa-trash-can delete-all-notes-btn" id="delete_all_notes_btn"></i>
+
+<style>
+    .delete-all-notes-btn {
+        font-size: 20px;
+        color: red;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    const notesContainer = document.querySelector(".notes-container")
+    const noteCounter = document.querySelector("#note_counter")
+
+    const deleteAllNotesButton = document.querySelector(".delete-all-notes-btn") as HTMLElement
+
+    deleteAllNotesButton.addEventListener("click", deleteAllNotes)
+
+    // Delete All Notes
+    function deleteAllNotes()
+    {
+        const isWantingToDeleteAllNotes = confirm("Are you sure you want to delete all notes? This will delete them from the database, too!",)
+
+        if (isWantingToDeleteAllNotes)
+        {
+            const isReallyWantingToDeleteAllNotes = confirm("Are you 110 % sure you want to delete all notes? This action can't be undone!",)
+
+            if (isReallyWantingToDeleteAllNotes)
+            {
+                while (notesContainer.firstChild)
+                {
+                    notesContainer.removeChild(notesContainer.firstChild)
+                }
+            }
+
+            resetNoteCounter()
+        }
+    }
+
+    function resetNoteCounter()
+    {
+        const noteCounter = document.querySelector("#note_counter")
+        let noteCount = notesContainer.children.length
+        noteCounter.textContent = noteCount.toString()
+
+        if(noteCounter.textContent === "0")
+        {
+            deleteAllNotesButton.style.display = 'none'
+        }
+    }
+</script>

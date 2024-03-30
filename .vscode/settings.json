@@ -1,5 +1,6 @@
 {
     "liveServer.settings.CustomBrowser": "firefox",
+<<<<<<< HEAD
     "editor.multiCursorPaste": "spread",
     "editor.cursorBlinking": "expand",
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
@@ -8,4 +9,10 @@
     "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
     "astro.format.placeOpenBraceOnNewLineForControlBlocks": true,
     "astro.format.placeOpenBraceOnNewLineForFunctions": true,
+=======
+    "editor.codeActionsOnSave": {
+        
+    },
+    "accessibility.verbosity.diffEditor": false
+>>>>>>> Delete-All-Notes-Button
 }
