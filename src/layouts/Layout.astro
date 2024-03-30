@@ -2,6 +2,7 @@
 import OpenCreateNoteFormButton from '../components/OpenCreateNoteFormButton.astro';
 import NewNoteForm from '../components/NewNoteForm.astro';
 import NotesContainer from '../components/NotesContainer.astro';
+import Header from '../components/Header.astro';
 
 const {title} = Astro.props
 ---
@@ -16,6 +17,7 @@ const {title} = Astro.props
 </head>
 <body>
 	<main>
+		<Header/>
 		<OpenCreateNoteFormButton/>
 		<NewNoteForm/>
 		<NotesContainer />
