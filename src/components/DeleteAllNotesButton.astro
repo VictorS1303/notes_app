@@ -1,15 +1,12 @@
 ---
-import NotesContainer from './NotesContainer.astro'
-import NoteCounter from './NoteCounter.astro'
-
+import NotesContainer from "./NotesContainer.astro"
+import NoteCounter from "./NoteCounter.astro"
 ---
-
 
 <i class="fas fa-trash-can delete-all-notes-btn" id="delete_all_notes_btn"></i>
 
 <style>
-    .delete-all-notes-btn
-    {
+    .delete-all-notes-btn {
         font-size: 20px;
         color: red;
         cursor: pointer;
@@ -17,35 +14,43 @@ import NoteCounter from './NoteCounter.astro'
 </style>
 
 <script>
+    const notesContainer = document.querySelector(".notes-container")
+    const noteCounter = document.querySelector("#note_counter")
 
-    const notesContainer = document.querySelector('.notes-container')
-    const noteCounter = document.querySelector('#note_counter');
+    const deleteAllNotesButton = document.querySelector(".delete-all-notes-btn") as HTMLElement
 
-    const deleteAllNotesButton = document.querySelector('.delete-all-notes-btn')    
+    deleteAllNotesButton.addEventListener("click", deleteAllNotes)
 
-    deleteAllNotesButton.addEventListener('click', deleteAllNotes)
-
-
+    // Delete All Notes
     function deleteAllNotes()
     {
-        const isWantingToDeleteAllNotes = confirm("Are you sure you want to delete all notes? This will delete them from the database, too!")
+        const isWantingToDeleteAllNotes = confirm("Are you sure you want to delete all notes? This will delete them from the database, too!",)
 
-        if(isWantingToDeleteAllNotes)
+        if (isWantingToDeleteAllNotes)
         {
-            const isReallyWantingToDeleteAllNotes = confirm("Are you 110 % sure you want to delete all notes? This action can't be undone!")
+            const isReallyWantingToDeleteAllNotes = confirm("Are you 110 % sure you want to delete all notes? This action can't be undone!",)
 
-            if(isReallyWantingToDeleteAllNotes)
+            if (isReallyWantingToDeleteAllNotes)
             {
                 while (notesContainer.firstChild)
                 {
-                    notesContainer.removeChild(notesContainer.firstChild);
-                    
+                    notesContainer.removeChild(notesContainer.firstChild)
                 }
-                const noteCounter = document.querySelector('#note_counter');
-                let noteCount = notesContainer.children.length;
-
-                noteCounter.textContent = noteCount.toString();
             }
+
+            resetNoteCounter()
+        }
+    }
+
+    function resetNoteCounter()
+    {
+        const noteCounter = document.querySelector("#note_counter")
+        let noteCount = notesContainer.children.length
+        noteCounter.textContent = noteCount.toString()
+
+        if(noteCounter.textContent === "0")
+        {
+            deleteAllNotesButton.style.display = 'none'
         }
     }
 </script>
