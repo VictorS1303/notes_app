@@ -1,5 +1,7 @@
 ---
 import NotesContainer from "./NotesContainer.astro"
+
+
 ---
 
 <h2>
@@ -9,9 +11,14 @@ import NotesContainer from "./NotesContainer.astro"
 
 <script>
 
+  function countNotes()
+{
     const notesContainer = document.querySelector('.notes-container');
     const noteCounter = document.querySelector('#note_counter');
     let noteCount = notesContainer.children.length;
 
     noteCounter.textContent = noteCount.toString();
+}
+
+countNotes()
 </script>
